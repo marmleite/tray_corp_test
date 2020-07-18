@@ -1,9 +1,10 @@
-require 'senior_test'
+require './../problems/senior_test'
 
 RSpec.describe SeniorTest do
-  context "with invalid argument" do
+  context "without skills" do
     it 'returns invalid argument' do
-      expect(SeniorTest.evaluate_seniority).to eq('invalid argument')
+      person = []
+      expect(SeniorTest.validate_skills(person)).to eq('invalid argument')
     end      
   end
 end
