@@ -1,5 +1,12 @@
 class SeniorTest
   class << self
+    def evaluate_seniority(person = [])
+      error_message = validate_skills(person)
+      skills_sum = sum_skills_values(person)
+      level = seniority_level(skills_sum)
+      "#{level} – Pontuação (#{skills_sum} pontos)"
+    end
+
     def validate_skills(person = [])
       error = 'invalid argument' if person.empty?
       person.each { |skill_set| error = validate_skill_values(skill_set.values) }
