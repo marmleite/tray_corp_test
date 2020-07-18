@@ -1,7 +1,7 @@
 # tray_corp_test
 Backend developer test for Tray Corp.
 
-Develope with Ruby 2.7 and RSpec 3.9
+Developed with Ruby 2.7 and RSpec 3.9
 
 Run with Docker (19.03.6)
 
