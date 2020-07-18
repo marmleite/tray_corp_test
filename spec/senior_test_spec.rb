@@ -23,7 +23,7 @@ RSpec.describe SeniorTest do
     it "returns skills values sum" do
       person = [{ ruby: 1, db: 1, agile: 0, pattern: 0  }]
       values_sum = person.first.values.sum
-      expect(SeniorTest.sum_skills(person)).to eq(2)
+      expect(SeniorTest.sum_skills_values(person)).to eq(2)
     end      
   end
   context "with skills values sum equal or less than 7" do
