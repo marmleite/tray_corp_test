@@ -11,5 +11,10 @@ class SeniorTest
       error = "skill value can't be negative"  if values.any? { |value| value < 0 }
       error
     end
+
+    def sum_skills_values(person)
+      skill_set_sum = person.map { |skill_set| skill_set.values.sum }
+      skill_set_sum.sum
+    end
   end
 end
