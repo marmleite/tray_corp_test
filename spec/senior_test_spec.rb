@@ -45,4 +45,12 @@ RSpec.describe SeniorTest do
       expect(SeniorTest.evaluate_seniority(person)).to eq("Júnior – Pontuação (#{values_sum} pontos)")
     end      
   end
+  
+  context "with skills values sum greather than 7 and less than or equal 11" do
+    it "returns pleno skills message" do
+      person = [{ ruby: 5, db: 3, agile: 1, pattern: 2 }]
+      values_sum = person.first.values.sum
+      expect(SeniorTest.evaluate_seniority(person)).to eq("Pleno – Pontuação (#{values_sum} pontos)")
+    end      
+  end
 end
