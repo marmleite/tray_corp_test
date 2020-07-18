@@ -19,4 +19,11 @@ RSpec.describe SeniorTest do
       expect(SeniorTest.validate_skills(person)).to eq("skill value can't be negative")
     end      
   end
+  context "with skills ruby: 1, db: 1, agile: 0, pattern: 0" do
+    it "returns junior skills message" do
+      person = [{ ruby: 1, db: 1, agile: 0, pattern: 0  }]
+      values_sum = person.first.values.sum
+      expect(SeniorTest.evalute_seniority(person)).to eq("Júnior – Pontuação (#{values_sum} pontos)")
+    end      
+  end
 end
