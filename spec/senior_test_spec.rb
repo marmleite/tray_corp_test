@@ -13,4 +13,10 @@ RSpec.describe SeniorTest do
       expect(SeniorTest.validate_skills(person)).to eq("skill value can't be above 5")
     end      
   end
+  context "with skill value under 0" do
+    it 'returns invalid argument' do
+      person = [{ ruby: -1 }]
+      expect(SeniorTest.validate_skills(person)).to eq("skill value can't be negative")
+    end      
+  end
 end
