@@ -26,6 +26,18 @@ RSpec.describe SeniorTest do
       expect(SeniorTest.sum_skills_values(person)).to eq(2)
     end      
   end
+
+  context "with skills sum" do
+    it "returns seniority level" do
+      junior_level_sum = 2
+      pleno_level_sum = 8
+      senior_level_sum = 12
+      expect(SeniorTest.seniority_level(junior_level_sum)).to eq('Júnior')
+      expect(SeniorTest.seniority_level(pleno_level_sum)).to eq('Pleno')
+      expect(SeniorTest.seniority_level(senior_level_sum)).to eq('Sênior')
+    end      
+  end
+  
   context "with skills values sum equal or less than 7" do
     it "returns junior skills message" do
       person = [{ ruby: 1, db: 1, agile: 0, pattern: 0  }]
