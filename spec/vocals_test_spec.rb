@@ -15,10 +15,17 @@ RSpec.describe VocalsTest do
     end
   end
 
-  context "phrase without vocals" do
-    it "returns vocals with 0 count" do
+  context 'phrase without vocals' do
+    it 'returns vocals with 0 count' do
       vocals = [{ a: 0, e: 0, i: 0, o: 0, u: 0 }]
       expect(VocalsTest.sum('')).to eq([VocalsTest::VOCALS_HASH]).and eq(vocals)
+    end
+  end
+
+  context 'phrase with vocals and consonants' do
+    it 'returns just vocals count' do
+      phrase = 'O cachorro uiva faz auuuuu para a lua'
+      expect(VocalsTest.sum(phrase)).to eq([{a: 8, e: 0, i: 1, o: 3, u: 7}])
     end
   end
 end
