@@ -14,4 +14,11 @@ RSpec.describe VocalsTest do
       expect(vocals_hash).to eq({ a: 1, e: 0, i: 0, o: 0, u: 0 })
     end
   end
+
+  context "phrase without vocals" do
+    it "returns vocals with 0 count" do
+      vocals = [{ a: 0, e: 0, i: 0, o: 0, u: 0 }]
+      expect(VocalsTest.sum('')).to eq([VocalsTest::VOCALS_HASH]).and eq(vocals)
+    end
+  end
 end
