@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo
+
+docker run --rm -v "$PWD":/test -w /test ruby:2.7 bundle install
+
+echo
+echo
