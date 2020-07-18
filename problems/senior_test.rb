@@ -16,5 +16,16 @@ class SeniorTest
       skill_set_sum = person.map { |skill_set| skill_set.values.sum }
       skill_set_sum.sum
     end
+
+    def seniority_level(skills_sum)
+      case skills_sum
+      when 0..7 
+        'Júnior'
+      when 8..11
+        'Pleno'
+      else
+        'Sênior'
+      end
+    end
   end
 end
