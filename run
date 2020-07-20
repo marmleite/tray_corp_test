@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo
+
+docker run --rm -v "$PWD":/test -w /test tray_corp_test ruby runner.rb $1 $2
+
+echo
+echo
